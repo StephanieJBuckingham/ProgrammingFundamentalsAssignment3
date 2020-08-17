@@ -89,7 +89,6 @@ public class NearestNeighbor {
 			String[] splitString = scanClass.nextLine().split(",");
 			classes[row] = splitString[4];
 			row++;
-			scanClass.close();
 
 		}
 
@@ -110,7 +109,6 @@ public class NearestNeighbor {
 					values[row][col] = Double.parseDouble(splitLines[j]);
 				}
 			}
-			scanValues.close();
 		}
 		return values;
 	}
@@ -145,6 +143,8 @@ public class NearestNeighbor {
 	// adds up correct classes and calculates and prints out accuracy 
 	private static void printResults(String[] predictions, String[]testingClasses) {
 
+	System.out.println("EX#: TRUE LABEL, PREDICTED LABEL");
+	
 	int correct = 0;
 
 	for (int i = 0; i < 75; i++) {
